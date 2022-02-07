@@ -1,4 +1,4 @@
-package jp.juggler.TestMoshiNullable;
+package jp.juggler.testMoshiNullable;
 
 import androidx.annotation.Keep;
 import androidx.annotation.Nullable;

@@ -1,11 +1,11 @@
-package jp.juggler.TestMoshiNullable
+package jp.juggler.testMoshiNullable
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import jp.juggler.TestMoshiNullable.databinding.ActivityMainBinding
+import jp.juggler.testMoshiNullable.databinding.ActivityMainBinding
 import java.io.PrintWriter
 import java.io.StringWriter
 
@@ -37,10 +37,11 @@ class MainActivity : AppCompatActivity() {
                 """{"errors":{}}""",
                 """{"errors":{"a":null}}""",
                 """{"errors":{"a":1}}""",
+                """{"errors":{"a":[{"b":1}]}}""",
             ).forEach { inputJson ->
-                addLog("----")
-                addLog("input: $inputJson")
                 try {
+                    addLog("----")
+                    addLog("input: $inputJson")
                     val entity1 = adapter.fromJson(inputJson)
                     addLog("entity1=${entity1}")
                     addLog("errors=${entity1?.errors}")
